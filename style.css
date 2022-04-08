@@ -1,73 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 html {
-    box-sizing: border-box;
-    font-family: monospace;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  
-  html,
-  body {
-    height: 100%;
-  }
-  
-  body {
-    margin: 0;
-  }
-  
-  header {
-    display: flex;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 2rem 1rem;
-    flex-wrap: wrap;
+    gap: 2rem;
   }
-  
-  header > * + * {
-    margin-top: 2rem !important;
+}
+
+.input__container {
+  display: flex;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .input__container {
+    width: 50%;
+    flex-direction: column;
   }
-  
-  @media screen and (min-width: 600px) {
-    header {
-      flex-direction: row;
-      align-items: baseline;
-      gap: 2rem;
-    }
-  
-    header > * + * {
-      margin-top: unset !important;
-    }
-  }
-  
-  input#red {
-    accent-color: red;
-  }
-  
-  input#green {
-    accent-color: green;
-  }
-  
-  input#blue {
-    accent-color: blue;
-  }
-  
-  label {
-    font-size: 2rem;
-  }
-  
-  #color-value {
-    font-size: 2rem;
-    margin: 0;
-  }
-  
-  @media screen and (min-width: 600px) {
-    #color-value {
-      margin-left: auto;
-    }
-  }
-  
+}
+
+#random-color-button {
+  border: none;
+  border-radius: 0.25rem;
+  background-color: rgba(43, 113, 244, 1);
+  transition: background-color 0.25s;
+  color: whitesmoke;
+  padding: 1rem 2rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+}
+
+#random-color-button:hover {
+  background-color: rgba(43, 113, 244, 0.9);
+  transition: background-color 0.25s;
+}
+
+.red {
+  accent-color: red;
+}
+
+.green {
+  accent-color: green;
+}
+
+.blue {
+  accent-color: blue;
+}
